@@ -8,13 +8,12 @@
 <script>
 
 import Carousel from '@/components/carousel.vue'
-// import Navbar from '@/components/navbar.vue'
 
+ 
 export default { 
   name: 'Home',
   components: {
     Carousel,
-    // Navbar
   }
 }
 </script>
