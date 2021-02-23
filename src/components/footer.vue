@@ -1,5 +1,8 @@
 <template>
-  <p>@copyright 2021</p>
+<div class="w-full h-5 bg-yellow-300 m-0">
+  <p class="inline-block align-middle">@copyright 2021</p>
+</div>
+  
 </template>
 
 <script>
