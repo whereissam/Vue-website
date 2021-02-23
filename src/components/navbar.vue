@@ -5,7 +5,7 @@
   <div class="flex items-center justify-between mb-4 md:mb-0">
     <h1 class="leading-none text-2xl text-grey-darkest">
       <a class="no-underline text-grey-darkest hover:text-black" href="#">
-        ChairGo
+        Site Title
       </a>
     </h1>
 
@@ -27,49 +27,30 @@
   <nav>
     <ul class="list-reset md:flex md:items-center">
       <li class="md:ml-4">
-        <router-link to="/">Home</router-link>
+        <a class="block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0" href="#">
+          Products
+        </a>
       </li>
       <li class="md:ml-4">
-        <router-link to="/about">About</router-link>
+        <a class="border-t block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0" href="#">
+          About
+        </a>
       </li>
       <li class="md:ml-4">
-        <router-link to="/news">News</router-link>
-      </li>
-       <li class="md:ml-4">
-        <router-link to="/products">Products</router-link>
-      </li>
-       <li class="md:ml-4">
-        <router-link to="/car">My shopping car</router-link>
-      </li>
-       <li class="md:ml-4">
-        <router-link to="/contact">Contact</router-link> 
+        <a class="border-t block no-underline hover:underline py-2 text-grey-darkest hover:text-black md:border-none md:p-0" href="#">
+          Contact
+        </a>
       </li>
     </ul>
   </nav>
-  
 </header>
-<router-view/>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+export default {
+  name: 'Navbar',
+  props: {
+    msg: String
+  }
 }
-
-nav {
-  padding-right: 30px;
-}
-
-ul li {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-ul li.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>
