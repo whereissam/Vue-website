@@ -1,43 +1,70 @@
 <template>
-<div class="carousel relative shadow-2xl bg-white">
-	<div class="carousel-inner relative overflow-hidden w-1024">
+<div class="carousel relative shadow-lg bg-white w-full m-auto">
+	<div class="carousel-inner relative overflow-hidden ">
 
 	  <!--Slide 1-->
 		<input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-		<div class="carousel-item absolute opacity-0" style="height:50vh;">
-			<div class="block h-full w-full">
-                <img class="object-contain"  src="https://images.unsplash.com/photo-1517705008128-361805f42e86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1279&q=80" alt="">
-            </div>
+		<div class="carousel-item absolute opacity-0" style="height:60vh;">
+
+		<div class="block h-full mx-auto flex pt-10 md:pt-0 md:items-center bg-cover bg-right-bottom" style="background-image: url('https://images.unsplash.com/photo-1517705008128-361805f42e86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1279&q=80');">
+
+                    <div class="container mx-auto">
+                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                            <p class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</p>
+                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
+                        </div>
+                    </div>
+			</div>
 		</div>
 		<label for="carousel-4" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
 		<label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
 		
 		<!--Slide 2-->
 		<input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-		<div class="carousel-item absolute opacity-0" style="height:50vh;">
-			<div class="block h-full w-full">
-                <img class="object-fill" src="https://images.unsplash.com/photo-1462212210333-335063b676bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80" alt="">
-            </div>
+		<div class="carousel-item absolute opacity-0" style="height:60vh;">
+			<div class="block h-full mx-auto flex pt-10 md:pt-0 md:items-center bg-cover bg-bottom" style="background-image: url('https://images.unsplash.com/photo-1462212210333-335063b676bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');">
+
+                    <div class="container mx-auto">
+                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                            <p class="text-white text-2xl my-4">Real Bamboo Wall Clock</p>
+                            <a class="text-xl text-white inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
+                        </div>
+                    </div>
+			</div>
 		</div>
 		<label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
 		<label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label> 
 		
 		<!--Slide 3-->
 		<input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-		<div class="carousel-item absolute opacity-0" style="height:50vh;">
-			<div class="block h-full w-full">
-                <img class="object-fill" src="https://images.unsplash.com/photo-1554104707-a76b270e4bbb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
-            </div>
+		<div class="carousel-item absolute opacity-0" style="height:60vh;">
+			<div class="block h-full mx-auto flex pt-10 md:pt-0 md:items-center bg-auto bg-center" style="background-image: url('https://images.unsplash.com/photo-1554104707-a76b270e4bbb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+
+                    <div class="container mx-auto">
+                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                            <p class="text-black text-2xl my-4">Real Bamboo Wall Clock</p>
+                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
+                        </div>
+                    </div>
+			</div>
+                
+            
 		</div>
 		<label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
 		<label for="carousel-4" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
 
 		<!--Slide 4-->
 		<input class="carousel-open" type="radio" id="carousel-4" name="carousel" aria-hidden="true" hidden="">
-		<div class="carousel-item absolute opacity-0" style="height:50vh;">
-			<div class="w-6/12 container mx-auto" >
-                <img class="mx-auto bg-cover" src="https://images.unsplash.com/photo-1491926626787-62db157af940?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="">
-            </div>
+		<div class="carousel-item absolute opacity-0" style="height:60vh;">
+			<div class="block h-full mx-auto flex pt-10 md:pt-0 md:items-center bg-cover bg-bottom" style="background-image: url('https://images.unsplash.com/photo-1491926626787-62db157af940?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+
+                    <div class="container mx-auto">
+                        <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
+                            <p class="text-white text-2xl my-4">Real Bamboo Wall Clock</p>
+                            <a class="text-xl text-white inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
+                        </div>
+                    </div>
+			</div>
 		</div>
 		<label for="carousel-3" class="prev control-4 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
 		<label for="carousel-1" class="next control-4 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>

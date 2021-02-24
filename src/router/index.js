@@ -4,6 +4,7 @@ import About from '../views/About.vue'
 import News from '../views/New.vue'
 import Product from '../views/product/product.vue'
 import ProductId from '../views/product/productdetail.vue'
+import Cart from '../views/Cart.vue'
 
 const routes = [
   {
@@ -31,11 +32,11 @@ const routes = [
     name: 'ProductId',
     component: ProductId
   },
-  // {
-  //   path: '/car',
-  //   name: 'Car',
-  //   component: Cars
-  // },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart
+  },
   // {
   //   path: '/contacts',
   //   name: 'Contact',
