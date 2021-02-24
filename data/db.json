@@ -1,7 +1,16 @@
 {
-    "member":[
-        {"firstName":"John", "lastName":"Doe"},
-        {"firstName":"Anna", "lastName":"Smith"},
-        {"firstName":"Peter", "lastName":"Jones"}
+    "products":[
+        {"id": 1,
+         "name": "red chair",
+         "$": 50,
+         "detail" : "Lorem",
+         "color" : ["red", "orange"]
+        },
+        {"id": 2,
+            "name": "odir chair",
+            "$": 59,
+            "detail" : "Lorem",
+            "color" : ["red", "orange"]
+        }
     ]
 }

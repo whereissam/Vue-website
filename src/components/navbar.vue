@@ -39,10 +39,10 @@
         <router-link to="/products">Products</router-link>
       </li>
        <li class="md:ml-4">
-        <router-link to="/cart">Cart</router-link>
+        <router-link to="/contact">Contact</router-link> 
       </li>
        <li class="md:ml-4">
-        <router-link to="/contact">Contact</router-link> 
+        <router-link to="/cart">Cart</router-link>
       </li>
     </ul>
   </nav>
