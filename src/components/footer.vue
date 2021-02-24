@@ -1,18 +1,29 @@
 <template>
-<div class="w-full h-10 bg-yellow-300 m-0">
-  <p class="block align-middle">@copyright 2021</p>
-  <ul> 
-    <li>
+<div class="w-full h-10 bg-yellow-300 m-0 flex justify-between justify-items-center">
+  <p class="block">@copyright 2021</p>
+  <ul class="flex"> 
+    <li class="mr-2">
       <a href="#">
-        <i class="fab fa-facebook-square"></i>
+        <img class='w-7 h-7' src="../assets/facebook-square-brands.svg" alt="">
+      </a>
+    </li>
+    <li class="mr-2">
+      <a href="#">
+        <img class='w-7 h-7' src="../assets/instagram-brands.svg" alt="">
+      </a>
+    </li>
+    <li class="mr-2">
+      <a href="#">
+        <img class='w-6 h-6' src="../assets/shopee.svg" alt="">
       </a>
     </li>
   </ul>
 </div>
   
 </template>
-<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
 <script>
+
 export default {
   name: 'Footer',
   props: {    

@@ -5,6 +5,7 @@ import News from '../views/New.vue'
 import Product from '../views/product/product.vue'
 import ProductId from '../views/product/productdetail.vue'
 import Cart from '../views/Cart.vue'
+import Contact from '../views/Contact.vue'
 
 const routes = [
   {
@@ -37,11 +38,11 @@ const routes = [
     name: 'Cart',
     component: Cart
   },
-  // {
-  //   path: '/contacts',
-  //   name: 'Contact',
-  //   component: Contacts
-  // },
+  {
+    path: '/contacts',
+    name: 'Contact',
+    component: Contact
+  }
 ]
 
 const router = createRouter({
