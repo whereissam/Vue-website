@@ -44,6 +44,9 @@
        <li class="md:ml-4">
         <router-link to="/cart">Cart</router-link>
       </li>
+      <li class="md:ml-4">
+        <router-link to="/sign"><img class="w-5 h-5" src="../assets/user.svg" alt=""></router-link>
+      </li>
     </ul>
   </nav>
 </header>

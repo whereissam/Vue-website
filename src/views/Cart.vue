@@ -1,5 +1,5 @@
 <template>
- <div class='w-full h-screen flex flex-nowrap bg-gray-600 bg-opacity-25'>
+ <div class='w-full h-full flex flex-nowrap bg-gray-600 bg-opacity-25'>
 
   <div class='darks bg-gray-600 w-9/12' @click="$router.go(-1)"></div>
 
