@@ -133,8 +133,14 @@
             </div>
 
             </div>
-
+            <div>
+        <h1>Product</h1>
+        <div v-for='product in products' :key='product.id'>
+          <h2>{{ product.name}}</h2>
+        </div>
+    </div>
     </section>
+    
 </template>
 
 <script>
@@ -142,6 +148,16 @@ export default {
   name: 'Product',
   props: {
     msg: String
+  },
+  data(){
+      return{
+          products:[
+              {name: 'asd chair', id:1, detail:'wood'},
+              {name: 'hwlow chair', id:1, detail:'concrete'},
+              {name: 'dsaxz chair', id:1, detail:'odi wood'}
+          ]
+      }
+      
   }
 }
 </script>

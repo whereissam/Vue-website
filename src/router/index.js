@@ -3,10 +3,12 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import News from '../views/New.vue'
 import Product from '../views/product/product.vue'
-import ProductId from '../views/product/productdetail.vue'
+// import ProductDetail from '../views/product/productDetail.vue'
+import ProductDetails from '../views/product/ProductDetails.vue'
 import Cart from '../views/Cart.vue'
 import Contact from '../views/Contact.vue'
 import Sign from '../views/Sign.vue'
+
 const routes = [
   {
     path: '/',
@@ -30,9 +32,15 @@ const routes = [
   },
   {
     path: '/products/:id',
-    name: 'ProductId',
-    component: ProductId
+    name: 'ProductDetails',
+    component: ProductDetails,
+    props: true
   },
+  //redirect
+  // {
+  //   path: '/all-products',
+  //   redirect: '/products'
+  // },
   {
     path: '/cart',
     name: 'Cart',

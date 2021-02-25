@@ -1,5 +1,5 @@
 <template>
-  <div class="productdetail">
+    <div class="productdetail" v-if="product">
    <body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
     <body class="font-mono bg-gray-400">
 		<!-- Container -->
@@ -10,21 +10,21 @@
 					<!-- Col -->
 					<div
 						class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg bd-top"
-						style="background-image: url('{{product.img}}')"
+						style="background-image: url('https://images.unsplash.com/photo-1487015307662-6ce6210680f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80')"
 					></div>
 					<!-- Col -->
           
 					<div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
 						<div class="px-8 mb-4 text-center">
-							<!-- <h3 class="pt-4 mb-2 text-2xl">{{product.name}}</h3> -->
+							<h3 class="pt-4 mb-2 text-2xl">{{product.name}}</h3>
 							<p class="mb-4 text-sm text-gray-700 mt-10">
-								$69.00
+								{{product.price}}
 							</p>
 						</div>
-						<div class="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+						<div class="px-8 pt-6 pb-8 mb-4 bg-white rounded w-full">
 							<div class="mb-4">
 								<p class="block mb-2 text-sm font-bold text-gray-700">
-									Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.
+									{{product.detail}}
 								</p>
 							</div>
 							<div class="mb-6 text-center p-3">
@@ -48,19 +48,18 @@
 		</div>
 	</body>
 </body>
-
-  </div>
+    </div>
 </template>
 
 <script>
 export default {
-	props:['id'],
-	data(){
-		return{
-			product: null
-		}
-	},
-  mounted(){ //get data
+    props:['id'],
+    data(){
+        return{
+            product: null
+        }
+    },
+    mounted(){ //get data
   fetch('http://localhost:3000/products/' + this.id)
     .then((res) => res.json())
     .then(data => this.product = data)
@@ -68,3 +67,7 @@ export default {
   }
 }
 </script>
+
+<style>
+
+</style>

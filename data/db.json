@@ -1,17 +1,28 @@
 {
+    "news":[
+        {"name": "asd chair", "id":1, "detail":""},
+        {"name": "hwlow chair", "id":2, "detail":"concrete"},
+        {"name": "dsaxz chair", "id":3, "detail":"odi wood"}
+    ],
     "products":[
-        {"id": 1,
-         "name": "red chair",
-         "$": 50,
-         "detail" : "Lorem",
-         "color" : ["red", "orange"]
+        {
+            "name": "asd chair", "id":1, 
+            "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!", 
+            "price": "$65.0",
+            "img" : "https://images.unsplash.com/photo-1487015307662-6ce6210680f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
         },
-        {"id": 2,
-            "name": "odir chair",
-            "$": 59,
-            "detail" : "Lorem",
-            "color" : ["red", "orange"]
+        {
+            "name": "hwlow chair",
+             "id":2, 
+             "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!",
+             "price": "$69.0",
+             "img" : "https://images.unsplash.com/photo-1544030288-e6e6108867f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80"
+        },
+        {
+            "name": "dsaxz chair",
+             "id":3, 
+             "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!",
+             "price": "$78.0"
         }
     ]
 }
-
