@@ -13,7 +13,7 @@
 						:style="{ backgroundImage: `url(${product.img})` }"
 					></div> <!-- binding to get img in json  -->
 					<!-- Col -->
-          
+             
 					<div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
 						<div class="px-8 mb-4 text-center">
 							<h3 class="pt-4 mb-2 text-2xl">{{product.name}}</h3>
@@ -29,18 +29,19 @@
 							</div>
 							<div class="mb-6 text-center p-3">
                 <div class="mb-6 border-red quantity">
-                  <button>-</button>
-                  <input class="w-10 text-center input-text qty text" type="name" id="quantity_xxx" step="1" min="1" max name="quantity" value="1" size="4" placeholder pattern="[0-9]"> 
-                  <button>+</button>
+                  <button @click='inc1'>-</button>
+				  <input  class="w-10 text-center" v-model.number="value" type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                  <!-- <input class="w-10 text-center input-text qty text" type="name" id="quantity_xxx" step="1" min="1" max name="quantity" value="1" size="4" placeholder pattern="[0-9]">  -->
+                  <button @click='add1'>+</button>
                 </div>
-								<button
-									class="w-full px-4 py-2 font-bold text-white bg-red-500 rounded-full hover:bg-red-700 focus:outline-none focus:shadow-outline"
-									type="button"
-								>
-									Add to cart
-								</button>
-							</div>
-							<hr class="mb-6 border-t" />
+					<button
+						class="w-full px-4 py-2 font-bold text-white bg-red-500 rounded-full hover:bg-red-700 focus:outline-none focus:shadow-outline"
+						type="button"
+					>
+					Add to cart
+					</button>
+				</div>
+					<hr class="mb-6 border-t" />
             </div>
 					</div>
 				</div>
@@ -57,9 +58,17 @@ export default {
     data(){
         return{
             product: null,
-			// img: require('http://localhost:3000/products')
+			value: 1
         }
     },
+	methods:{
+    add1(){
+      this.value = this.value +1
+    },
+    inc1(){
+      this.value = this.value -1
+    }
+  },
     mounted(){ //get data
   fetch('http://localhost:3000/products/' + this.id)
     .then((res) => res.json())
