@@ -3,7 +3,6 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import News from '../views/New.vue'
 import Product from '../views/product/product.vue'
-// import ProductDetail from '../views/product/productDetail.vue'
 import ProductDetails from '../views/product/ProductDetails.vue'
 import Cart from '../views/Cart.vue'
 import Contact from '../views/Contact.vue'
@@ -47,7 +46,7 @@ const routes = [
     component: Cart
   },
   {
-    path: '/contacts',
+    path: '/contact',
     name: 'Contact',
     component: Contact
   },

@@ -10,8 +10,8 @@
 
                     <div class="container mx-auto">
                         <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</p>
-                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
+                            <p class="text-black text-2xl my-4">L chair</p>
+                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="http://localhost:8080/products/25">view product</a>
                         </div>
                     </div>
 			</div>
@@ -26,8 +26,8 @@
 
                     <div class="container mx-auto">
                         <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-white text-2xl my-4">Real Bamboo Wall Clock</p>
-                            <a class="text-xl text-white inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
+                            <p class="text-white text-2xl my-4">Red chair</p>
+                            <a class="text-xl text-white inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="http://localhost:8080/products/27">view product</a>
                         </div>
                     </div>
 			</div>
@@ -42,8 +42,8 @@
 
                     <div class="container mx-auto">
                         <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-black text-2xl my-4">Real Bamboo Wall Clock</p>
-                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
+                            <p class="text-black text-2xl my-4">White plastic chiar</p>
+                            <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="http://localhost:8080/products/28">view product</a>
                         </div>
                     </div>
 			</div>
@@ -56,12 +56,12 @@
 		<!--Slide 4-->
 		<input class="carousel-open" type="radio" id="carousel-4" name="carousel" aria-hidden="true" hidden="">
 		<div class="carousel-item absolute opacity-0" style="height:60vh;">
-			<div class="block h-full mx-auto flex pt-10 md:pt-0 md:items-center bg-cover bg-bottom" style="background-image: url('https://images.unsplash.com/photo-1491926626787-62db157af940?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+			<div class="block h-full mx-auto flex pt-10 md:pt-0 md:items-center bg-cover bg-bottom" style="background-image: url('https://images.unsplash.com/photo-1491926626787-62db157af940?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=600&q=80');">
 
                     <div class="container mx-auto">
                         <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                            <p class="text-white text-2xl my-4">Real Bamboo Wall Clock</p>
-                            <a class="text-xl text-white inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
+                            <p class="text-white text-2xl my-4">Cozy chair</p>
+                            <a class="text-xl text-white inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="http://localhost:8080/products/29">view product</a>
                         </div>
                     </div>
 			</div>
