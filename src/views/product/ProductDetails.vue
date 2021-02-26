@@ -10,8 +10,8 @@
 					<!-- Col -->
 					<div
 						class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg bd-top"
-						style="background-image: url('https://images.unsplash.com/photo-1487015307662-6ce6210680f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80')"
-					></div>
+						:style="{ backgroundImage: `url(${product.img})` }"
+					></div> <!-- binding to get img in json  -->
 					<!-- Col -->
           
 					<div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
@@ -56,7 +56,8 @@ export default {
     props:['id'],
     data(){
         return{
-            product: null
+            product: null,
+			// img: require('http://localhost:3000/products')
         }
     },
     mounted(){ //get data

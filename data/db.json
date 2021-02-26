@@ -6,7 +6,8 @@
     ],
     "products":[
         {
-            "name": "asd chair", "id":1, 
+            "name": "asd chair", 
+            "id":1, 
             "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!", 
             "price": "$65.0",
             "img" : "https://images.unsplash.com/photo-1487015307662-6ce6210680f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
@@ -22,7 +23,71 @@
             "name": "dsaxz chair",
              "id":3, 
              "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!",
-             "price": "$78.0"
+             "price": "$78.0",
+             "img":"https://images.unsplash.com/photo-1503602642458-232111445657?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80"
+        },
+        {
+            "name": "asd chair", 
+            "id":4, 
+            "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!", 
+            "price": "$65.0",
+            "img" : "https://images.unsplash.com/photo-1487015307662-6ce6210680f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
+        },
+        {
+            "name": "hwlow chair",
+             "id":5, 
+             "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!",
+             "price": "$69.0",
+             "img" : "https://images.unsplash.com/photo-1544030288-e6e6108867f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80"
+        },
+        {
+            "name": "dsaxz chair",
+             "id":6, 
+             "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!",
+             "price": "$78.0",
+             "img":"https://images.unsplash.com/photo-1503602642458-232111445657?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80"
+        },
+        {
+            "name": "asd chair", 
+            "id":7, 
+            "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!", 
+            "price": "$65.0",
+            "img" : "https://images.unsplash.com/photo-1487015307662-6ce6210680f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
+        },
+        {
+            "name": "hwlow chair",
+             "id":8, 
+             "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!",
+             "price": "$69.0",
+             "img" : "https://images.unsplash.com/photo-1544030288-e6e6108867f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80"
+        },
+        {
+            "name": "dsaxz chair",
+             "id":9, 
+             "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!",
+             "price": "$78.0",
+             "img":"https://images.unsplash.com/photo-1503602642458-232111445657?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80"
+        },
+        {
+            "name": "asd chair", 
+            "id":10, 
+            "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!", 
+            "price": "$65.0",
+            "img" : "https://images.unsplash.com/photo-1487015307662-6ce6210680f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
+        },
+        {
+            "name": "hwlow chair",
+             "id":11, 
+             "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!",
+             "price": "$69.0",
+             "img" : "https://images.unsplash.com/photo-1544030288-e6e6108867f6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80"
+        },
+        {
+            "name": "dsaxz chair",
+             "id":12, 
+             "detail":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, debitis, est id perferendis illo aliquid vel, impedit dolorem aut culpa temporibus a minus libero quia soluta itaque commodi illum tenetur!",
+             "price": "$78.0",
+             "img":"https://images.unsplash.com/photo-1503602642458-232111445657?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80"
         }
     ]
 }
