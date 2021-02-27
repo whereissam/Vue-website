@@ -7,23 +7,53 @@
 
 cart sidebar
 1. insert shopping data into  -->
-    <div  class="backdrop top-0 fixed bg-black bg-opacity-50 w-full h-full" @click="closeModal">
-        <div v-if="products" 
-            class="modal w-2/4 p-10 my-auto mx-auto bg-white rounded-lg" 
+    <div  class="backdrop top-0 fixed bg-black bg-opacity-50 w-full h-full flex justify-end" > 
+        <!-- @click="closeModal" -->
+        <div class="modal flex flex-wrap sm:w-20 md:w-1/3 lg:w-1/4 h-full p-10 bg-gray-900 rounded-lg" 
             :class="{ car : theme == 'car'}"
             >
             <!-- use binding and props to custumize and deliever the part of component -->
-
-            <div v-for='product in products' :key='product.id'>
-                <h1>{{product.name}}</h1>
-                <p>{{product.price}}</p>
-                <img class="w-10 h-10" :src="product.img">
-                <!-- <h1 class="text-yellow-200">Modal Title</h1>
-                <p>modal content</p> -->
+            <div class="w-full" @click="closeModal">
+                <button class="w-full text-right">close</button>
+                <!-- https://stackoverflow.com/questions/38562170/vuejs-v-if-directive-for-event -->
+                <!-- need to update click and hide -->
+                <div v-if="carts">
+                    <div class='w-full flex h-24 mt-5 border-t-2 pt-5 border-gray-700' v-for='product in carts' :key='product.id'>
+                    <img class="w-20 h-20 " :src="product.img">
+                    <div class="w-full p-2 ">
+                        <h1 class=" mb-3 text-left ml-2">{{product.name}}</h1>
+                        <div class="flex ml-2 w-full justify-between">
+                            <div class="flex ">
+                                <p class="text-sm mr-2">Qty</p>
+                                <button @click='inc1' class="text-sm mx-1">-</button>
+                                <input class="w-6 text-sm bg-gray-900 text-center" 
+                                        type="text"
+                                        v-model.number="value" 
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                >
+                                <button @click='add1' class="text-sm mx-1">+</button>
+                            </div>
+                            <p class="text-sm">{{product.price}}</p>
+                        </div>
+                    
+                        </div>
+                    </div>
+                </div>
+              
+                <div v-else>
+                    <hr class="my-5">
+                    <div class='border-gray-200 w-full text-center flex flex-wrap flex-col h-full justify-between'>
+                        <div class="h-1/3 my-5 w-full">
+                            <div class='text-center self-start mt-10 mb-5'>X</div>
+                            <div>No products in the cart.</div>
+                        </div>
+                        <div>
+                             <p class='border-2 border-gray-500 border-opacity-50 w-full text-center h-14 align-middle m-5 md:h-7 self-end cursor-pointer'>Continue shopping</p>
+                        </div>
+                       
+                    </div>
+                </div>
             </div>
-        </div>
-        <div v-else>
-            <h1>Still loading</h1>
         </div>
     </div>
 </template>
@@ -37,18 +67,25 @@ export default {
   },
    data(){
       return{
-          products:[]
+          carts:null,
+          value: 1
       }
   },
   methods:{
       closeModal(){
           this.$emit('close') //
-      }
+      },
+      add1(){
+      this.value = this.value +1
+    },
+        inc1(){
+      this.value = this.value -1
+    }
   },
     mounted(){ //get data
-    fetch('http://localhost:3000/products')
+    fetch('http://localhost:3000/carts')
         .then((res) => res.json())
-        .then(data => this.products = data)
+        .then(data => this.carts = data)
         .catch(err => console.log(err.message))
   }
 
@@ -59,7 +96,7 @@ export default {
     z-index: 12;
 }
 .modal.car{
-    background-color: crison;
-    color: aquamarine;
+    /* background-color: crison; */
+    color:#EEEEEE;
 }
 </style>
