@@ -122,7 +122,7 @@ export default {
 				left: 0;
 				right: 0;
 				text-align: center;
-				z-index: 10;
+				z-index: 10; 
 			}
 			#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
 			#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,

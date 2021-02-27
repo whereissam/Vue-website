@@ -1,5 +1,5 @@
 <template>
- <div class='w-full h-full flex flex-nowrap bg-gray-600 bg-opacity-25'>
+ <!-- <div class='w-full h-full flex flex-nowrap bg-gray-600 bg-opacity-25'>
 
   <div class='darks bg-gray-600 w-9/12' @click="$router.go(-1)"></div>
 
@@ -10,6 +10,13 @@
       No products in the cart.</div>
     <p class='border-2 border-gray-500 border-opacity-50 w-full text-center h-14 align-middle m-5 md:h-7 self-end cursor-pointer' @click="$router.go(-1)">Continue shopping</p>
   </div>
-</div>
-  
+</div> -->
+  <div class="backdrop">
+    <div class="cart">
+      <h1>Cart content</h1>
+      <p>Modal content</p>
+    </div>
+  </div>
+
 </template>
+

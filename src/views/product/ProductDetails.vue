@@ -30,7 +30,11 @@
 							<div class="mb-6 text-center p-3">
                 <div class="mb-6 border-red quantity">
                   <button @click='inc1'>-</button>
-				  <input  class="w-10 text-center" v-model.number="value" type="text" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+				  <input  class="w-10 text-center" 
+				  			v-model.number="value" 
+							type="text" 
+							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+							>
                   <!-- <input class="w-10 text-center input-text qty text" type="name" id="quantity_xxx" step="1" min="1" max name="quantity" value="1" size="4" placeholder pattern="[0-9]">  -->
                   <button @click='add1'>+</button>
                 </div>
