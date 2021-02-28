@@ -13,27 +13,30 @@ cart sidebar
             :class="{ car : theme == 'car'}"
             >
             <!-- use binding and props to custumize and deliever the part of component -->
-            <div class="w-full" @click="closeModal">
-                <button class="w-full text-right">close</button>
+            <div class="w-full" >
+                <button class="w-full text-right" @click="closeModal">close</button>
                 <!-- https://stackoverflow.com/questions/38562170/vuejs-v-if-directive-for-event -->
                 <!-- need to update click and hide -->
                 <div v-if="carts">
-                    <div class='w-full flex h-24 mt-5 border-t-2 pt-5 border-gray-700' v-for='product in carts' :key='product.id'>
+                    <div class='w-full flex h-24 mt-5 border-t-2 pt-5 border-gray-700 relative' v-for='product in carts' :key='product.id'>
                     <img class="w-20 h-20 " :src="product.img">
-                    <div class="w-full p-2 ">
+                    <button class="detail" @click="deletes"></button>
+                    <div class="w-full p-2">
                         <h1 class=" mb-3 text-left ml-2">{{product.name}}</h1>
                         <div class="flex ml-2 w-full justify-between">
                             <div class="flex ">
                                 <p class="text-sm mr-2">Qty</p>
-                                <button @click='inc1' class="text-sm mx-1">-</button>
+                                <button @click='inc1' class="text-xs mx-1">◀</button>
                                 <input class="w-6 text-sm bg-gray-900 text-center" 
                                         type="text"
                                         v-model.number="value" 
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        @change="quantity"
                                 >
-                                <button @click='add1' class="text-sm mx-1">+</button>
+                                <button @click='add1' class="text-xs mx-1">▶</button>
+                                <router-link to="/cart">Cart</router-link>
                             </div>
-                            <p class="text-sm">{{product.price}}</p>
+                            <p class="text-sm">{{product.number}}{{product.price}}</p>
                         </div>
                     
                         </div>
@@ -59,11 +62,13 @@ cart sidebar
 </template>
 
 <script>
+import productsVue from './products.vue'
 export default {
   name: 'CartSideBar',
   props: {
     msg: String,
-    theme: String
+    theme: String,
+    id: Number
   },
    data(){
       return{
@@ -77,9 +82,25 @@ export default {
       },
       add1(){
       this.value = this.value +1
-    },
-        inc1(){
+      fetch('http://localhost:3000/carts/1',{
+          method: 'PATCH',
+          body: JSON.stringify({
+              number : this.value
+          })
+          
+      })
+        .then((res) => res.json())
+        .then(data => this.carts = data)
+        .catch(err => console.log(err.message))
+      },
+      inc1(){
       this.value = this.value -1
+      },
+      deletes(){
+          fetch('http://localhost:3000/carts/2',{
+              method: 'DELETE'
+    })
+        // console.log('hi')
     }
   },
     mounted(){ //get data
@@ -93,10 +114,17 @@ export default {
 </script>
 <style>
 .backdrop{
-    z-index: 12;
+    z-index: 14;
 }
 .modal.car{
     /* background-color: crison; */
     color:#EEEEEE;
+}
+.detail::before{
+  content: "x";
+  color:#EEEEEE;
+  position: absolute;
+  right: 10px;
+    top: 15px
 }
 </style>
