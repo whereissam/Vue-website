@@ -7,6 +7,7 @@ import ProductDetails from '../views/product/ProductDetails.vue'
 import Cart from '../views/Cart.vue'
 import Contact from '../views/Contact.vue'
 import Sign from '../views/Sign.vue'
+import Create from '../views/Create.vue'
 
 const routes = [
   {
@@ -54,6 +55,11 @@ const routes = [
     path: '/Sign',
     name: 'Sing',
     component: Sign
+  },
+  {
+    path: '/Create',
+    name: 'Create',
+    component: Create
   }
 ]
 

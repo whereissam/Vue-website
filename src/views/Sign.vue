@@ -1,8 +1,8 @@
 <template>
     <div class='card w-1/4 m-auto flex flex-col flex-wrap border-2 justify-center mt-28'>
-  <h1 class='flex justify-center mt-5'>Sign in</h1>
+  <h1 class='flex justify-center mt-5 text-xl'>Sign in</h1>
   
-  <form @submit.prevent="handleSubmit" class='p-5 mt-5' id="myForm" >
+  <form @submit.prevent="handleSubmit" class='p-5 mt-1' id="myForm" >
    
     <label for="user" class='text-xs self-start'>Username or email address*</label><br />
     <input type="email" v-model='formData.email' required id='user' class='border-2 w-full mt-1 mb-5'><br />
@@ -12,19 +12,33 @@
     <div v-if="passwordError" class="text-red-700 text-lg">{{passwordError}}</div> 
     <!-- check passwordError -->
     
-    <div class='flex justify-between items-center w-full flex-wrap xl:flex-nowrap border-2 bg-green-300 mt-5'>
+    <div class='flex justify-between items-center w-full flex-wrap xl:flex-nowrap mt-5'>
       
-      <div class='bg-red-300 flex flex-start'>
+      <div class='flex flex-start'>
         <input type="checkbox" id='remember' v-model="formData.remember">
         <label for="remember" class='text-xs'>Remember me</label>
       </div>
-      <a href="#" class='text-xs bg-yellow-200 justify-self-end'>Lost your password?</a>
+      <a href="#" class='text-xs'>Lost your password?</a>
       <br />
     </div>
    
-    <button class='w-full text-sm border-2 mt-3 mb-3 p-1 singin'>Sign in</button>
+    <div class="buttons">
+      <!-- Check that the SDK client is not currently loading before accessing is methods -->
+      <div >
+        <!-- v-if="!$auth.loading" -->
+        <!-- show login when not authenticated -->
+        <a v-if="!$auth.isAuthenticated" @click="login" class="button text-gray-800"><strong>Sign in</strong></a>
+        <!-- show logout when authenticated -->
+        <a v-if="$auth.isAuthenticated" @click="logout" class="button text-gray-800"><strong>Log out</strong></a>
+      </div>
+    </div>
+   
+    <button class='w-full text-sm border-2 mt-3 mb-3 p-1'>Sign in</button> 
     <div class='w-full text-xs text-center'>-------------- or --------------</div>
-    <button class='border-2 w-full mt-3 p-1 text-sm'>Create an account</button>
+     <router-link to="/create">
+        <button class='border-2 w-full mt-3 p-1 text-sm'>Create an account</button>
+    </router-link> 
+    
   </form>
 </div>
 <!-- <p>Your email {{email}}</p>
@@ -50,20 +64,28 @@ export default {
     msg: String
   },
   methods:{
-    handleSubmit(){ 
-      this.passwordError = this.formData.password.length > 5 ? '' : "Password must be at least 6 chars long"
-      if (!this.passwordError){
-        fetch("http://localhost:3000/member", {
-            method:'POST',
-            body:JSON.stringify(this.formData),
-            headers:{ "Content-Type" : 'application/json'} //without it, cannot transfer data to json-server
-          })
-          .then(res => {
-            return res.json();   // 使用 json() 可以得到 json 物件
-          }).then(result => {
-              console.log(result); 
-          }).catch(err => console.log(err.message))
-      }
+    // handleSubmit(){ 
+    //   this.passwordError = this.formData.password.length > 5 ? '' : "Password must be at least 6 chars long"
+    //   if (!this.passwordError){
+    //     fetch("http://localhost:3000/member", {
+    //         method:'POST',
+    //         body:JSON.stringify(this.formData),
+    //         headers:{ "Content-Type" : 'application/json'} //without it, cannot transfer data to json-server
+    //       })
+    //       .then(res => {
+    //         return res.json();   // 使用 json() 可以得到 json 物件
+    //       }).then(result => {
+    //           console.log(result); 
+    //       }).catch(err => console.log(err.message))
+    //   }
+    login() {
+      this.$auth.loginWithRedirect();
+    },
+    // Log the user out
+    logout() {
+      this.$auth.logout({
+        returnTo: window.location.origin
+      });
     }
     
   }
