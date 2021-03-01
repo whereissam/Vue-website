@@ -1,6 +1,6 @@
 <template>
   <h2 class="text-center w-full mt-5">We’d love to hear from you.</h2>
-  <div class="w-1/2 h-1/2 self-center border-2 mt-20 mb-20">Goole map</div>
+  <div class="w-1/2 h-1/2 self-center border-2 mt-20 mb-20">Google map</div>
   <!-- <div
     id="map-canvas"
     class="relative w-2/5 rounded h-2/4 self-center"
