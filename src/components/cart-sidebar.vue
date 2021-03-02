@@ -20,27 +20,28 @@ cart sidebar
                 <div v-if="carts">
                     <div class='w-full flex h-24 mt-5 border-t-2 pt-5 border-gray-700 relative' v-for='product in carts' :key='product.id'>
                     <img class="w-20 h-20 " :src="product.img">
-                    <button class="detail" @click="deletes"></button>
+                    <button class="detail" @click="deletes(product.id)"></button>
                     <div class="w-full p-2">
                         <h1 class=" mb-3 text-left ml-2">{{product.name}}</h1>
                         <div class="flex ml-2 w-full justify-between">
                             <div class="flex ">
                                 <p class="text-sm mr-2">Qty</p>
-                                <button @click='inc1' class="text-xs mx-1">◀</button>
+                                <button @click='inc1(product.id,product.number)' class="text-xs mx-1">◀</button>
                                 <input class="w-6 text-sm bg-gray-900 text-center" 
                                         type="text"
                                         v-model.number="value" 
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                         @change="quantity"
                                 >
-                                <button @click='add1' class="text-xs mx-1">▶</button>
+                                <button @click='add1(product.id,product.number)' class="text-xs mx-1">▶</button>
                                 <router-link to="/cart">Cart</router-link>
                             </div>
-                            <p class="text-sm">{{product.number}}{{product.price}}</p>
+                            <p class="text-sm">{{product.number * product.price}}</p>
                         </div>
-                    
+
                         </div>
                     </div>
+                    
                 </div>
               
                 <div v-else>
@@ -55,6 +56,9 @@ cart sidebar
                         </div>
                        
                     </div>
+                </div>
+                <div class="flex border-2 h-full">
+                    <p>Subtotal: </p>
                 </div>
             </div>
         </div>
@@ -73,34 +77,36 @@ export default {
    data(){
       return{
           carts:null,
-          value: 1
+          value: 1,
+          newPrice: ''
       }
   },
   methods:{
       closeModal(){
           this.$emit('close') //
       },
-      add1(){
+      add1(id,number){
       this.value = this.value +1
-      fetch('http://localhost:3000/carts/1',{
-          method: 'PATCH',
-          body: JSON.stringify({
-              number : this.value
-          })
-          
-      })
-        .then((res) => res.json())
-        .then(data => this.carts = data)
-        .catch(err => console.log(err.message))
+      console.log(id,number,this.value)
+    //   fetch('http://localhost:3000/carts/' + id,{
+    //       method: 'PATCH',
+    //       body: JSON.stringify({
+    //           number : this.value
+    //       }),
+    //       headers:{ "Content-Type" : 'application/json'}  
+    //   })
+    //     .then((res) => res.json())
+    //     .then(data => this.carts = data)
+    //     .catch(err => console.log(err.message))
       },
       inc1(){
       this.value = this.value -1
       },
-      deletes(){
-          fetch('http://localhost:3000/carts/2',{
+      deletes(id){
+          fetch('http://localhost:3000/carts/' + id,{
               method: 'DELETE'
     })
-        // console.log('hi')
+    //   console.log(id)
     }
   },
     mounted(){ //get data

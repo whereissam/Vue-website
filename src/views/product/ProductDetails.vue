@@ -41,6 +41,7 @@
 					<button
 						class="w-full px-4 py-2 font-bold text-white bg-red-500 rounded-full hover:bg-red-700 focus:outline-none focus:shadow-outline"
 						type="button"
+						@click="addToCart(product.id)"
 					>
 					Add to cart
 					</button>
@@ -57,12 +58,14 @@
 </template>
 
 <script>
+import productsVue from '../../components/products.vue'
 export default {
     props:['id'],
     data(){
         return{
             product: null,
-			value: 1
+			value: 1,
+			productName: this.product.name
         }
     },
 	methods:{
@@ -71,7 +74,20 @@ export default {
     },
     inc1(){
       this.value = this.value -1
-    }
+    },
+	addToCart(id){
+		 fetch("http://localhost:3000/carts" + id, {
+            method:'POST',
+            body:JSON.stringify(this.productName),
+            headers:{ "Content-Type" : 'application/json'} //without it, cannot transfer data to json-server
+          })
+          .then(res => {
+            return res.json();   // 使用 json() 可以得到 json 物件
+          }).then(result => {
+              console.log(result); 
+          }).catch(err => console.log(err.message))
+		// console.log(event)
+	}
   },
     mounted(){ //get data
   fetch('http://localhost:3000/products/' + this.id)
