@@ -23,14 +23,7 @@
     </div>
    
     <div class="buttons">
-      <!-- Check that the SDK client is not currently loading before accessing is methods -->
-      <div >
-        <!-- v-if="!$auth.loading" -->
-        <!-- show login when not authenticated -->
-        <a v-if="!$auth.isAuthenticated" @click="login" class="button text-gray-800"><strong>Sign in</strong></a>
-        <!-- show logout when authenticated -->
-        <a v-if="$auth.isAuthenticated" @click="logout" class="button text-gray-800"><strong>Log out</strong></a>
-      </div>
+     
     </div>
    
     <button class='w-full text-sm border-2 mt-3 mb-3 p-1'>Sign in</button> 
@@ -64,29 +57,20 @@ export default {
     msg: String
   },
   methods:{
-    // handleSubmit(){ 
-    //   this.passwordError = this.formData.password.length > 5 ? '' : "Password must be at least 6 chars long"
-    //   if (!this.passwordError){
-    //     fetch("http://localhost:3000/member", {
-    //         method:'POST',
-    //         body:JSON.stringify(this.formData),
-    //         headers:{ "Content-Type" : 'application/json'} //without it, cannot transfer data to json-server
-    //       })
-    //       .then(res => {
-    //         return res.json();   // 使用 json() 可以得到 json 物件
-    //       }).then(result => {
-    //           console.log(result); 
-    //       }).catch(err => console.log(err.message))
-    //   }
-    login() {
-      this.$auth.loginWithRedirect();
-    },
-    // Log the user out
-    logout() {
-      this.$auth.logout({
-        returnTo: window.location.origin
-      });
-    }
+    handleSubmit(){ 
+      this.passwordError = this.formData.password.length > 5 ? '' : "Password must be at least 6 chars long"
+      if (!this.passwordError){
+        fetch("http://localhost:3000/member", {
+            method:'POST',
+            body:JSON.stringify(this.formData),
+            headers:{ "Content-Type" : 'application/json'} //without it, cannot transfer data to json-server
+          })
+          .then(res => {
+            return res.json();   // 使用 json() 可以得到 json 物件
+          }).then(result => {
+              console.log(result); 
+          }).catch(err => console.log(err.message))
+      }}
     
   }
 }

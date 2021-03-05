@@ -58,14 +58,13 @@
 </template>
 
 <script>
-import productsVue from '../../components/products.vue'
+
 export default {
     props:['id'],
     data(){
         return{
             product: null,
 			value: 1,
-			productName: this.product.name
         }
     },
 	methods:{
@@ -76,20 +75,20 @@ export default {
       this.value = this.value -1
     },
 	addToCart(id){
-		 fetch("http://localhost:3000/carts" + id, {
-            method:'POST',
-            body:JSON.stringify(this.productName),
-            headers:{ "Content-Type" : 'application/json'} //without it, cannot transfer data to json-server
-          })
-          .then(res => {
-            return res.json();   // 使用 json() 可以得到 json 物件
-          }).then(result => {
-              console.log(result); 
-          }).catch(err => console.log(err.message))
+		//  fetch("http://localhost:3000/carts" + id, {
+        //     method:'POST',
+        //     body:JSON.stringify(this.productName),
+        //     headers:{ "Content-Type" : 'application/json'} //without it, cannot transfer data to json-server
+        //   })
+        //   .then(res => {
+        //     return res.json();   // 使用 json() 可以得到 json 物件
+        //   }).then(result => {
+        //       console.log(result); 
+        //   }).catch(err => console.log(err.message))
 		// console.log(event)
 	}
   },
-    mounted(){ //get data
+   mounted(){ //get data
   fetch('http://localhost:3000/products/' + this.id)
     .then((res) => res.json())
     .then(data => this.product = data)

@@ -87,7 +87,7 @@ export default {
       },
       add1(id,number){
       this.value = this.value +1
-      console.log(id,number,this.value)
+    //   console.log(id,number,this.value)
     //   fetch('http://localhost:3000/carts/' + id,{
     //       method: 'PATCH',
     //       body: JSON.stringify({
