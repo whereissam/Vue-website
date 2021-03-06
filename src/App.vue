@@ -1,6 +1,9 @@
 <template>
 <div class="flex flex-col h-screen justify-between">
-  <Navbar />
+  <div class="fixed z-20 w-full">
+    <Navbar />
+  </div>
+  
   <router-view/>
   <Footer />
 </div>

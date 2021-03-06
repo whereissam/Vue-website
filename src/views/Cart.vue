@@ -11,7 +11,7 @@
     <p class='border-2 border-gray-500 border-opacity-50 w-full text-center h-14 align-middle m-5 md:h-7 self-end cursor-pointer' @click="$router.go(-1)">Continue shopping</p>
   </div>
 </div> -->
-<body class="bg-gray-100">
+<body class="bg-gray-100 mt-20">
   <div class="container mx-auto mt-10">
     <div class="flex shadow-md my-10">
       <div class="w-3/5 bg-white px-10 py-10">

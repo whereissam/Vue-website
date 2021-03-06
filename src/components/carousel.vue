@@ -1,5 +1,5 @@
 <template>
-<div class="carousel relative shadow-lg bg-white w-full m-auto">
+<div class="carousel relative shadow-lg bg-white w-full m-auto mt-32">
 	<div class="carousel-inner relative overflow-hidden ">
 
 	  <!--Slide 1-->

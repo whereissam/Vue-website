@@ -1,5 +1,5 @@
 <template>
-  <div class="shop" >
+  <div class="shop mt-10" >
      <section class="bg-white py-8">
 
         <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">

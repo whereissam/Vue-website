@@ -1,5 +1,5 @@
 <template>
-  <h2 class="text-center w-full mt-5">We’d love to hear from you.</h2>
+  <h2 class="text-center w-full mt-32">We’d love to hear from you.</h2>
   <div class="w-1/2 h-1/2 self-center border-2 mt-20 mb-20">Google map</div>
   <!-- <div
     id="map-canvas"

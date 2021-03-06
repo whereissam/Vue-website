@@ -7,18 +7,20 @@
 
 cart sidebar
 1. insert shopping data into  -->
-    <div  class="backdrop top-0 fixed bg-black bg-opacity-50 w-full h-full flex justify-end" > 
-        <!-- @click="closeModal" -->
+    <div  class="backdrop top-0 fixed bg-black bg-opacity-50 w-full h-full flex justify-end" @click.self="closeModal"> 
         <div class="modal flex flex-wrap sm:w-20 md:w-1/3 lg:w-1/4 h-full p-10 bg-gray-900 rounded-lg" 
             :class="{ car : theme == 'car'}"
             >
             <!-- use binding and props to custumize and deliever the part of component -->
-            <div class="w-full" >
-                <button class="w-full text-right" @click="closeModal">close</button>
+            <div class="w-full relative" >
+                <div class="w-full text-right" >
+                    <button @click="closeModal">close</button>
+                </div>
+                
                 <!-- https://stackoverflow.com/questions/38562170/vuejs-v-if-directive-for-event -->
                 <!-- need to update click and hide -->
-                <div v-if="carts">
-                    <div class='w-full flex h-24 mt-5 border-t-2 pt-5 border-gray-700 relative' v-for='product in carts' :key='product.id'>
+                <div v-if="carts" class="relative">
+                    <div class='w-full flex h-24 mt-5 border-t-2 pt-5 border-gray-700' v-for='product in carts' :key='product.id'>
                     <img class="w-20 h-20 " :src="product.img">
                     <button class="detail" @click="deletes(product.id)"></button>
                     <div class="w-full p-2">
@@ -57,9 +59,16 @@ cart sidebar
                        
                     </div>
                 </div>
-                <div class="flex border-2 h-full">
-                    <p>Subtotal: </p>
-                </div>
+            <div >
+                    <div class="absolute border-t-2 border-b-2 h-12 flex bottom-20 w-full">
+                        <p class="self-center">Subtotal: </p>
+                        <p>{{ addTotal}}</p>
+                    </div>
+                    
+                    <button class="absolute bottom-9 border-2 h-8 w-full"><a href="http://localhost:8080/cart">View cart</a></button>
+                    
+                    <button class="absolute -bottom-2 border-2 h-8 w-full">Checkout</button>
+            </div>
             </div>
         </div>
     </div>
@@ -79,6 +88,12 @@ export default {
           carts:null,
           value: 1,
           newPrice: ''
+      }
+  },
+  computed:{
+      addTotal(){
+        //   return this.newPrice = 
+          
       }
   },
   methods:{
@@ -103,9 +118,9 @@ export default {
       this.value = this.value -1
       },
       deletes(id){
-          fetch('http://localhost:3000/carts/' + id,{
-              method: 'DELETE'
-    })
+        //   fetch('http://localhost:3000/carts/' + id,{
+        //       method: 'DELETE'
+    // })
     //   console.log(id)
     }
   },
