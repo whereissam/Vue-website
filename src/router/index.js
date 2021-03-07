@@ -2,14 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import News from '../views/New.vue'
-// import Product from '../views/product/product.vue'
 import Product from '../components/products.vue'
 import ProductDetails from '../views/product/ProductDetails.vue'
 import Cart from '../views/Cart.vue'
 import Contact from '../views/Contact.vue'
 import Sign from '../views/Sign.vue'
 import Create from '../views/Create.vue'
-import Display from '../views/Display.vue'
+import Vuecanvas from '../components/P5-canvas.vue'
 
 const routes = [
   {
@@ -65,8 +64,8 @@ const routes = [
   },
   {
     path: '/display',
-    name: 'Display',
-    component: Display
+    // name: 'Display',
+    component: Vuecanvas
   }
 ]
 

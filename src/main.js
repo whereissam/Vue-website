@@ -1,43 +1,8 @@
-// import { createApp } from 'vue'
-// // createApp(App).use(router).mount('#app')
-// import Vue from 'vue'
-// import App from './App.vue'
-// import router from './router'
-// import './assets/tailwind.css'
-// // import 'bulma/css/bulma.css';
-
-// // Import the Auth0 configuration
-// // import { domain, clientId } from "../auth_config.json";
-
-// // // Import the plugin here
-// // import { Auth0Plugin } from "./auth";
-
-// // Install the authentication plugin here
-// // Vue.use(Auth0Plugin, {
-// //   domain,
-// //   clientId,
-// //   onRedirectCallback: appState => {
-// //     router.push(
-// //       appState && appState.targetUrl
-// //         ? appState.targetUrl
-// //         : window.location.pathname
-// //     );
-// //   }
-// // });
-
-// // Vue.config.productionTip = false
-
-// new Vue({
-//   router,
-//   render: h => h(App)
-// }).$mount('#app')
-
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import './assets/tailwind.css'
-// import axios from 'axios'
-// import VueAxios from 'vue-axios'
-
+// import P5 from 'p5'
 
 createApp(App).use(router).mount('#app')
+// createApp(P5).use(router).mount('#p5')

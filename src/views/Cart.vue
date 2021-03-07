@@ -11,6 +11,8 @@
     <p class='border-2 border-gray-500 border-opacity-50 w-full text-center h-14 align-middle m-5 md:h-7 self-end cursor-pointer' @click="$router.go(-1)">Continue shopping</p>
   </div>
 </div> -->
+
+
 <body class="bg-gray-100 mt-20">
   <div class="container mx-auto mt-10">
     <div class="flex shadow-md my-10">
@@ -19,39 +21,49 @@
           <h1 class="font-semibold text-2xl">Shopping Cart</h1>
           <h2 class="font-semibold text-2xl">3 Items</h2>
         </div>
-        <div class="flex mt-10 mb-5">
-          <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Product Details</h3>
-         
-          <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
-        </div>
-        <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-          <div class="flex w-2/5"> <!-- product -->
-            <div class="w-20">
-              <img class="h-24" src="https://drive.google.com/uc?id=18KkAVkGFvaGNqPy2DIvTqmUH_nk39o3z" alt="">
-            </div>
-            <div class="flex flex-col justify-between ml-4 flex-grow">
-              <span class="font-bold text-sm">Iphone 6S</span>
-               <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Quantity</h3>
-              
-             <div class="flex justify-center w-1/5 border-2">
-           <button @click='inc1'>-</button>
-				  <input  class="w-10 text-center" 
-				  			v-model.number="value" 
-							type="text" 
-							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-							>
+                  <div v-if="carts" class="relative m-10">
+                    <div class='w-full flex h-24 border-gray-300' v-for='product in carts' :key='product.id'>
+                    <img class="w-20 h-20 " :src="product.img">
+                    <button class="detail" @click="deletes(product.id)"></button>
+                    <div class="w-full p-2">
+                        <h1 class=" mb-3 text-left ml-2">{{product.name}}</h1>
+                        <div class="flex ml-2 w-full justify-between">
+                            <div class="flex ">
+                                <p class="text-sm mr-2">Qty</p>
+                                <button @click='inc1(product.id,product.number)' class="text-xs mx-1">◀</button>
+                                <input class="w-6 text-sm text-center" 
+                                        type="text"
+                                        v-model.number="value" 
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                        @change="quantity"
+                                >
+                                <button @click='add1(product.id,product.number)' class="text-xs mx-1">▶</button>
+                            </div>
+                            <p class="text-sm">{{product.number * product.price}}</p>
+                        </div>
 
-        <button @click='add1'>+</button>
-          </div>
-              <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
-            </div>
-          </div>
-         
-          <span class="text-center self-right w-1/5 font-semibold text-sm">$400.00</span>
-        </div>
+                        </div>
+                    </div>
+                    
+                </div>
+              
+                <div v-else>
+                    <hr class="my-5">
+                    <div class='border-gray-200 w-full text-center flex flex-wrap flex-col h-full justify-between'>
+                        <div class="h-1/3 my-5 w-full">
+                            <div class='text-center self-start mt-10 mb-5'>X</div>
+                            <div>No products in the cart.</div>
+                        </div>
+                        <div>
+                             <p class='border-2 border-gray-500 border-opacity-50 w-full text-center h-14 align-middle m-5 md:h-7 self-end cursor-pointer'>Continue shopping</p>
+                        </div>
+                       
+                    </div>
+                </div>
+          
 
         
-        <a href="#" class="flex font-semibold text-indigo-600 text-sm mt-10">
+        <a href="#" class="flex font-semibold text-indigo-600 text-sm mt-10 " >
       
           <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
           Continue Shopping
@@ -90,4 +102,71 @@
 
 
 </template>
+<script>
 
+
+export default {
+  name: 'Cart',
+  props: {
+    id: Number
+  },
+   data(){
+      return{
+          carts:null,
+          value: 1,
+          newPrice: ''
+      }
+  },
+  computed:{
+      addTotal(){
+        //   return this.newPrice = 
+          
+      }
+  },
+  methods:{
+      closeModal(){
+          this.$emit('close') //
+      },
+      add1(id,number){
+      this.value = this.value +1
+    //   console.log(id,number,this.value)
+    //   fetch('http://localhost:3000/carts/' + id,{
+    //       method: 'PATCH',
+    //       body: JSON.stringify({
+    //           number : this.value
+    //       }),
+    //       headers:{ "Content-Type" : 'application/json'}  
+    //   })
+    //     .then((res) => res.json())
+    //     .then(data => this.carts = data)
+    //     .catch(err => console.log(err.message))
+      },
+      inc1(){
+      this.value = this.value -1
+      },
+      deletes(id){
+        //   fetch('http://localhost:3000/carts/' + id,{
+        //       method: 'DELETE'
+    // })
+    //   console.log(id)
+    }
+  },
+    mounted(){ //get data
+    fetch('http://localhost:3000/carts')
+        .then((res) => res.json())
+        .then(data => this.carts = data)
+        .catch(err => console.log(err.message))
+  }
+
+}
+</script>
+<style>
+
+.detail::before{
+  content: "x";
+  color:#EEEEEE;
+  position: absolute;
+  right: 10px;
+    top: 15px
+}
+</style>

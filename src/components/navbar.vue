@@ -30,8 +30,8 @@
   
   <!-- Global navigation -->
   <nav>
-    <ul class="list-reset md:flex md:items-center">
-      <li class="md:ml-4">
+    <ul class="list-reset md:flex md:items-center bg-white h-full">
+      <li class="md:ml-4 ">
         <router-link to="/">Home</router-link>
       </li>
       <li class="md:ml-4">

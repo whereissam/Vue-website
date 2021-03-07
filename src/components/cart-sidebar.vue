@@ -38,7 +38,7 @@ cart sidebar
                                 <button @click='add1(product.id,product.number)' class="text-xs mx-1">▶</button>
                                 <router-link to="/cart">Cart</router-link>
                             </div>
-                            <p class="text-sm">{{product.number * product.price}}</p>
+                            <p class="text-sm">${{  }}</p>
                         </div>
 
                         </div>
@@ -87,12 +87,13 @@ export default {
       return{
           carts:null,
           value: 1,
-          newPrice: ''
+          newPrice: '',
+        //   number: product.number
       }
   },
   computed:{
-      addTotal(){
-        //   return this.newPrice = 
+      newPrice(){
+        //   return this.newPrice = this.value * this.number
           
       }
   },
@@ -101,7 +102,8 @@ export default {
           this.$emit('close') //
       },
       add1(id,number){
-      this.value = this.value +1
+          console.log(id)
+    //   this.value = this.value +1
     //   console.log(id,number,this.value)
     //   fetch('http://localhost:3000/carts/' + id,{
     //       method: 'PATCH',
@@ -135,7 +137,7 @@ export default {
 </script>
 <style>
 .backdrop{
-    z-index: 14;
+    z-index: 30;
 }
 .modal.car{
     /* background-color: crison; */

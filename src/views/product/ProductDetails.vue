@@ -41,7 +41,7 @@
 					<button
 						class="w-full px-4 py-2 font-bold text-white bg-red-500 rounded-full hover:bg-red-700 focus:outline-none focus:shadow-outline"
 						type="button"
-						@click="addToCart(product.id)"
+						@click="toggleModal"
 					>
 					Add to cart
 					</button>
@@ -54,19 +54,24 @@
 		</div>
 	</body>
 </body>
+<div v-if="showModal">
+  <CartSide msg="home" theme="car" @close='toggleModal'/> 
+</div>
     </div>
 </template>
 
 <script>
-
+import CartSide from '../../components/cart-sidebar.vue'
 export default {
     props:['id'],
     data(){
         return{
             product: null,
 			value: 1,
+			showModal: false
         }
     },
+	components:{CartSide},
 	methods:{
     add1(){
       this.value = this.value +1
@@ -86,7 +91,10 @@ export default {
         //       console.log(result); 
         //   }).catch(err => console.log(err.message))
 		// console.log(event)
-	}
+	},
+	 toggleModal(){
+      this.showModal = !this.showModal
+    }
   },
    mounted(){ //get data
   fetch('http://localhost:3000/products/' + this.id)

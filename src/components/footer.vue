@@ -1,5 +1,5 @@
 <template>
-<div class="w-full h-10 bg-yellow-300 m-0 flex justify-between justify-items-center">
+<div class="w-full h-10 bg-yellow-300 m-0 flex justify-between items-center justify-items-center">
   <p class="block">@copyright 2021</p>
   <ul class="flex"> 
     <li class="mr-2">
