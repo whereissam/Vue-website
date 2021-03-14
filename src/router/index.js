@@ -1,15 +1,27 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import News from '../views/New.vue'
-import Product from '../components/products.vue'
-import ProductDetails from '../views/product/ProductDetails.vue'
-import Cart from '../views/Cart.vue'
-import Contact from '../views/Contact.vue'
-import Sign from '../views/Sign.vue'
-import Create from '../views/Create.vue'
-import Vuecanvas from '../components/P5-canvas.vue'
+// import Home from '../views/Home.vue'
+// import About from '../views/About.vue'
+// import News from '../views/New.vue'
+// import Product from '../components/products.vue'
+// import ProductDetails from '../views/product/ProductDetails.vue'
+// import Cart from '../views/Cart.vue'
+// import Contact from '../views/Contact.vue'
+// import Sign from '../views/Sign.vue'
+// import Create from '../views/Create.vue'
+// import Vuecanvas from '../components/P5-canvas.vue'
+
+//lazy load to prevent initial loading is too long
+const Home = () => import('../views/Home.vue')
+const About =() => import('../views/About.vue')
+const News = () => import('../views/New.vue')
+const Product = () => import( '../components/products.vue')
+const ProductDetails = () => import( '../views/product/ProductDetails.vue')
+const Cart = () => import( '../views/Cart.vue')
+const Contact = () => import( '../views/Contact.vue')
+const Sign = () => import( '../views/Sign.vue')
+const Create = () => import( '../views/Create.vue')
+const Vuecanvas = () => import( '../components/P5-canvas.vue')
 
 const routes = [
   {
@@ -41,8 +53,8 @@ const routes = [
   },
   //redirect
   // {
-  //   path: '/all-products',
-  //   redirect: '/products'
+  //   path: '',
+  //   redirect: '/home'
   // },
   {
     path: '/cart',

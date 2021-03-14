@@ -4,7 +4,7 @@
   <!-- Logo text or image -->
   <div class="flex items-center justify-between mb-4 md:mb-0">
     <h1 class="leading-none text-2xl text-grey-darkest">
-      <a class="no-underline text-grey-darkest hover:text-black" href="http://localhost:8080/">
+      <a class="no-underline text-grey-darkest hover:text-black" href="http://localhost:8080/vueweb-chairgo/">
         Chair
       </a>
       <router-link to="/display">

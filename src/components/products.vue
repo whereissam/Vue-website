@@ -32,7 +32,8 @@
             <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col"  v-for='product in products' :key='product.id'>
                     <img class="hover:grow hover:shadow-lg cursor-pointer" @click='viewProduct(product.id)' :src="product.img" >
                     <div class="pt-3 flex items-center justify-between">
-                         <router-link :to="{name: 'ProductDetails', params:{id : product.id}}">
+                        <router-link :to="{name: 'ProductDetails', params:{id : product.id}}">
+                        <!-- or <router-link :to="'/products/'+productId"> -->
                         <p class="">{{product.name}}</p>
                         </router-link>
                         <svg class="h-6 w-6 fill-current text-gray-500 hover:text-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -67,6 +68,11 @@ export default {
     .then((res) => res.json())
     .then(data => this.products = data)
     .catch(err => console.log(err.message))
-  }
+  },
+//   computed:{
+//       productId(){
+//           return this.$route.prarms.productId
+//       }
+//   }
 }
 </script>
