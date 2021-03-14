@@ -119,7 +119,8 @@ export default {
   },
   computed:{
       addTotal(){
-        //   return this.newPrice = 
+        //this.carts.reduce() or for(){ return xx} or for of xx {}
+          // return this.newPrice = 
           
       }
   },

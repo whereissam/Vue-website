@@ -30,9 +30,9 @@
   
   <!-- Global navigation -->
   <nav>
-    <ul class="list-reset md:flex md:items-center bg-white h-full">
+    <ul class="list-reset md:flex md:items-center h-full">
       <li class="md:ml-4 ">
-        <router-link to="/">Home</router-link>
+        <router-link to="/" active-class="active">Home</router-link>
       </li>
       <li class="md:ml-4">
         <router-link to="/about">About</router-link>
@@ -51,7 +51,8 @@
         <!-- <router-link to="/cart">Cart</router-link> -->
       </li>
       <li class="md:ml-4">
-        <router-link to="/sign"><img class="w-5 h-5" src="../assets/user.svg" alt=""></router-link>
+        <router-link to="/sign" tag='button'><img class="w-5 h-5" src="../assets/user.svg" alt=""></router-link>
+        <!-- router-link 加 tag 轉換屬性 -->
       </li>
     </ul>
   </nav>
@@ -84,3 +85,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.active{
+  background-color: whitesmoke;
+}
+</style>

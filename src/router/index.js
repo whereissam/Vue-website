@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import News from '../views/New.vue'
@@ -14,6 +15,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    // redirect: '/home',
     component: Home
   },
   { 
@@ -71,7 +73,8 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  linkActiveClass:'active' //預設router的變化綁定
 })
 
 export default router

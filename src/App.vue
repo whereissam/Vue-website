@@ -23,5 +23,4 @@ export default {
   components:{ Navbar, Footer, VueCanvas}, 
 }
 </script>
-<style>
-</style>
+

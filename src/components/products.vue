@@ -30,7 +30,7 @@
             </nav>
 
             <div class="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col"  v-for='product in products' :key='product.id'>
-                    <img class="hover:grow hover:shadow-lg" :src="product.img">
+                    <img class="hover:grow hover:shadow-lg cursor-pointer" @click='viewProduct(product.id)' :src="product.img" >
                     <div class="pt-3 flex items-center justify-between">
                          <router-link :to="{name: 'ProductDetails', params:{id : product.id}}">
                         <p class="">{{product.name}}</p>
@@ -54,6 +54,12 @@ export default {
    data(){
       return{
           products:[]
+      }
+  },
+  methods:{
+      viewProduct(id){
+        //   console.log(event)
+          this.$router.push('/products/' + id) //等同於router-link
       }
   },
   mounted(){ //get data
