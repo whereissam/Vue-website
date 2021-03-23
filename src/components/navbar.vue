@@ -30,6 +30,7 @@
   
   <!-- Global navigation -->
   <nav>
+    
     <ul class="list-reset md:flex md:items-center h-full">
       <li class="md:ml-4 ">
         <router-link to="/" active-class="active">Home</router-link>

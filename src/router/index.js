@@ -22,13 +22,30 @@ const Contact = () => import( '../views/Contact.vue')
 const Sign = () => import( '../views/Sign.vue')
 const Create = () => import( '../views/Create.vue')
 const Vuecanvas = () => import( '../components/P5-canvas.vue')
+const officeChair = () => import('../views/product/OfficeChair.vue')
+// const AllProduct = () => import('../views/product/Allproducts.vue')
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     // redirect: '/home',
-    component: Home
+    component: Home,
+    // children:[
+    // {
+    //   path: '',
+    //   redirect: 'products'
+    // },
+    // {
+    //   path: 'officechair',
+    //   component:  officeChair
+    // },
+    // {
+    //   path: 'products',
+    //   name: 'Product',
+    //   component: Product
+    // } 
+    // ]
   },
   { 
     path: '/about',
